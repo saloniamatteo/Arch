@@ -44,6 +44,13 @@ If you haven't already, download [the Arch ISO](https://www.archlinux.org/downlo
 + Put the DVD/USB in your machine
 + Open the BIOS/UEFI and [modify the boot order](https://www.pcsteps.com/1508-change-the-boot-order-usb-dvd-bios-uefi/), choosing the DVD/USB as the first boot device.
 
+## SWAP partition
+Please note: follow [these instructions](https://www.linux.com/news/all-about-linux-swap-space/) on how to allocate SWAP.
+
+For example, if you gave 1GB of ram to the VM, you should create a SWAP partition of 2GB (twice the size of RAM).
+
+Generally, modern machines have at least 4GB of ram, meaning that you should create a swap partition of at least half the size of ram (servers), but it's recommended to have a SWAP partition two times larger than the available RAM (desktops) (as written in the article linked above)
+
 ***
 
 ## After booting into the VM:

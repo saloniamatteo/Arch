@@ -78,6 +78,11 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 - 1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
 
 ## 2) [Partition the disk](https://wiki.archlinux.org/index.php/Installation_Guide#Partition_the_disks)
+(NOTE: we will be using a 20GB virtual HDD, if you use a real machine, you need to use bigger values. Please read the SWAP section above before continuing)
+
+(Let's say you have a 500GB HDD and you want to create a SWAP partition of 4GB, you need to make an ext4 partition of 500-4 = 496GB, and a swap partition of 4GB.)
+
+
 + USING `fdisk` (like the terminal prompt, not user friendly): 
 	- 2.1) `fdisk /dev/sda`
 	- 2.2) Create a new partition (ext4): n, p, 1, 2048, +18G, [ENTER]

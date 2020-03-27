@@ -196,7 +196,7 @@ Update /etc/pacman.d/mirrorlist:
 + 18.2) Type the password you chose for `<user>` (it will be invisible)
 
 ## 19) [Install X.Org](https://wiki.archlinux.org/index.php/Xorg#Installation)
-+ 19.1) Install X.Org: `sudo pacman -S xorg`
++ 19.1) Install X.Org: `sudo pacman -S xorg xorg-xinit`
 + 19.2) Select all packages by pressing [ENTER]
 
 ## 20) [Install a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)

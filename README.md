@@ -187,12 +187,14 @@ Update /etc/pacman.d/mirrorlist:
 - Deepin ([please read](https://wiki.archlinux.org/index.php/Deepin#Installation)): `sudo pacman -S deepin deepin-extra networkmanager`
 - MATE: `sudo pacman -S mate mate-extra`
 
-## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation):
+## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation)
 + 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`
 + 21.2) Intel: `sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode`
 + 21.3) NVIDIA: `sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils`
 
 (NOTE: other video drivers can be found in the `xorg-drivers` group)
+
+***
 
 Now you installed Arch Linux, enjoy!
 You can improve these instructions by [creating a new pull request](https://github.com/GoDzM4TT3O/Arch/compare).
@@ -201,4 +203,4 @@ You can improve these instructions by [creating a new pull request](https://gith
 + To install a package, run: `sudo pacman -S <package>`
 + To remove a package, run: `sudo pacman R <package>`
 
-(After the Live CD/DVD is removed and we are logged into our user profile, all of the commands starting with pacman must be ran as root, or else they will not work)
+(After the Live CD/DVD is removed and we are logged into our user profile, all of the commands starting with pacman must be ran as root using `sudo`, or else they will not work)

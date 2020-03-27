@@ -37,6 +37,10 @@ If you haven't already, download [the Arch ISO](https://www.archlinux.org/downlo
 	- Click on the CD/DVD icon
 	- On the right, select the location of the Arch iso
 	- Select "Live CD/DVD"
++ Go into the "Network " tab
+	- Click on "NAT"
+	- Select "Bridged adapter"
+	- Choose the network interface you want to use for the Virtual Machine (for example wlp4s0 and enp3s0 are two network interfaces)
 + Click "Ok"
 + Start the VM
 

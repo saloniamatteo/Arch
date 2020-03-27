@@ -79,7 +79,7 @@ USING CFDISK (graphical, more user friendly):
 
 5) Update /etc/pacman.d/mirrorlist:
 5.1) vim /etc/pacman.d/mirrorlist
-5.2) Comment/delete all (this is the computer name)the lines but keep the server closest to you
+5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose.
 
 6) Install arch base system: pacstrap /mnt base base-devel linux linux-firmware
 

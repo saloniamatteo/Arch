@@ -39,6 +39,9 @@ Choose "Arch Linux", then hit [ENTER]
 keyboard layout, but this is not needed, if you have a keyboard with an
 american keyboard layout)
 
+To find out available keyboard layouts, run: ls /usr/share/kbd/keymaps/**/*.map.gz
+Once you find your keyboard layout, run: loadkeys <keyboard-layout>
+
 1) Check if the network is working:
 1.1) Check the network interfaces: ip link
 1.2) If the above looks good, check if internet works: ping 1.1.1.1

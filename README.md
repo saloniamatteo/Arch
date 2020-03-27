@@ -81,7 +81,7 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 + 4.1) Mount the disk space: `mount /dev/sda1 /mnt`
 + 4.2) Mount the swap: `swapon /dev/sda2`
 
-## 5) [Installation](https://wiki.archlinux.org/index.php/Installation_Guide#Installation)
+## 5) [Installation: modifying the mirror list](https://wiki.archlinux.org/index.php/Installation_Guide#Installation)
 (If you don't like using vim, use nano)
 
 Update /etc/pacman.d/mirrorlist:

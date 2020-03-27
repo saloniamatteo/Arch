@@ -5,6 +5,8 @@ the commands are the same)
 NOTE: if you don't like using vim, please replace "vim" with "nano"
 or an editor of your choice
 
+I suggest also checking out the arch wiki @ https://wiki.archlinux.org/index.php/Installation_Guide
+
 If you haven't already, download the Arch ISO.
 
 -> Open virtualbox

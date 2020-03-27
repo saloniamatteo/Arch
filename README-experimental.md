@@ -1,56 +1,61 @@
-Here are the steps that I followed in order to create an Arch VM:
+## Here are the steps that I followed in order to create an Arch VM:
 (You can use these instructions also on a real machine, the commands are the same)
 
-NOTE: if you don't like using vim, please replace "vim" with "nano"
-or an editor of your choice
+NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an editor of your choice
 
-I suggest also checking out the arch wiki @ https://wiki.archlinux.org/index.php/Installation_Guide
+I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php/Installation_Guide)
 
-If you haven't already, download the Arch ISO.
+If you haven't already, download [the Arch ISO](https://www.archlinux.org/download).
 
--> Open virtualbox
--> Click "New"
--> Click "Expert Mode"
-	-> Name: Arch
-	-> RAM: At least 1024 MB
-	-> Hard disk: Create a virtual hard disk now
--> Click "Create"
-	-> File Size: At least 20 GB
-	-> Hard disk file type: VDI
-	-> Storage on physical HDD: Dynamically allocated
--> Click "Create"
--> Select the new VM
--> Click "Settings"
--> Go into the "Storage" tab
-	-> Click on the CD/DVD icon
-	-> On the right, select the location of the Arch iso
-	-> Select "Live CD/DVD"
--> Click "Ok"
--> Start the VM
++ Open virtualbox
 
++ Click "New"
 
++ Click "Expert Mode"
+	- Name: Arch
+	- RAM: At least 1024 MB
+	- Hard disk: Create a virtual hard disk now
+	
++ Click "Create"
+	- File Size: At least 20 GB
+	- Hard disk file type: VDI
+	- Storage on physical HDD: Dynamically allocated
+	
++ Click "Create"
 
-After booting into the VM:
++ Select the new VM
 
-Choose "Arch Linux", then hit [ENTER]
++ Click "Settings"
 
-(First of all I ran "loadkeys it" because my keyboard has an italian
-keyboard layout, but this is not needed, if you have a keyboard with an
-american keyboard layout)
++ Go into the "Storage" tab
+	- Click on the CD/DVD icon
+	- On the right, select the location of the Arch iso
+	- Select "Live CD/DVD"
++ Click "Ok"
++ Start the VM
 
-Set the keyboard layout: https://wiki.archlinux.org/index.php/Installation_Guide#Set_the_keyboard_layout
+***
 
-To find out available keyboard layouts, run: ls /usr/share/kbd/keymaps/**/*.map.gz
-Once you find your keyboard layout, run: loadkeys <keyboard-layout>
+## After booting into the VM:
 
-Connect to the internet: https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet
++ Choose "Arch Linux", then hit [ENTER]
 
-1) Check if the network is working:
-1.1) Check the network interfaces: ip link
-1.2) If the above looks good, check if internet works: ping 1.1.1.1
-1.3) If the above looks good, sync the clock: timedatectl set-ntp true
+(First of all I ran `loadkeys it` because my keyboard has an italian keyboard layout, but this is not needed, if you have a keyboard with an american keyboard layout)
 
-2) Partition the disk (I recommend using CFDISK):
+## [Set the keyboard layout](https://wiki.archlinux.org/index.php/Installation_Guide#Set_the_keyboard_layout)
+
+To find out available keyboard layouts, run: `ls /usr/share/kbd/keymaps/**/*.map.gz`
+
+Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
+
+## [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
+
+1) Check if the network is working
+1.1) Check the network interfaces: `ip link`
+1.2) If the above looks good, check if internet works: `ping archlinux.org`
+1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
+
+2) Partition the disk (I recommend using `cfdisk`):
 
 USING FDISK (like the terminal prompt, not user friendly): 
 2.1) fdisk /dev/sda

@@ -1,5 +1,6 @@
 ## How to install Arch Linux
-(These instructions were written by me, following the Arch Wiki, to install Arch on a VM)
+(These instructions were written by me, following the Arch Wiki, to install Arch on a VM &/or real machine)
+(These instructions are addressed to people that want to try out arch, but don't know how to install it)
 (You can use these instructions also on a real machine, the commands are the same)
 
 NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an editor of your choice
@@ -9,7 +10,7 @@ I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php
 If you haven't already, download [the Arch ISO](https://www.archlinux.org/download).
 
 ### If you use a VM:
-+ Open virtualbox
++ Open [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 + Click "New"
 

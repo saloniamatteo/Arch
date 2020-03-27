@@ -66,6 +66,8 @@ USING CFDISK (graphical, more user friendly):
 4.1) Mount the disk space: mount /dev/sda1 /mnt
 4.2) Mount the swap: swapon /dev/sda2
 
+(If you don't like using vim, use nano)
+
 5) Update /etc/pacman.d/mirrorlist:
 5.1) vim /etc/pacman.d/mirrorlist
 5.2) Comment/delete all (this is the computer name)the lines but keep the server closest to you
@@ -73,6 +75,8 @@ USING CFDISK (graphical, more user friendly):
 6) Install arch base system: pacstrap /mnt base base-devel linux linux-firmware
 
 7) Create fstab: genfstab -U /mnt >> /mnt/etc/fstab
+
+(If you don't like using vim, use nano)
 
 8) Go into the new file system: arch-chroot /mnt
 8.1) Install vim to modify files: pacman -S vim
@@ -124,9 +128,17 @@ american keyboard layout)
 16.2) Install grub to disk: grub-install /dev/sda
 16.3) Configure grub: grub-mkconfig -o /boot/grub/grub.cfg
 
-17) Now exit and shutdown the VM, then remove the Arch ISO.
+17) Before rebooting, we need to install the network tools
+17.1) pacman -S dhcpcd net-tools
+17.2) After the above is done, enable dhcpcd: systemctl enable dhcpcd
+17.3) Exit out of chroot: exit
+17.4) Poweroff the machine: poweroff (you can also use shutdown now)
+17.5) Go into the VM settings and remove the Arch ISO
+17.6) Start the VM
 
 18) Log into the <user> profile
+18.1) Type the <user>'s name
+18.2) Type the password you chose for <user> (it will be invisible)
 
 19) Install X.Org: sudo pacman -S xorg
 19.1) Select all packages by pressing [ENTER]

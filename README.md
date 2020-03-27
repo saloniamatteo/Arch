@@ -187,10 +187,11 @@ Update /etc/pacman.d/mirrorlist:
 + 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`
 + 21.2) Intel: `sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode`
 + 21.3) NVIDIA: `sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils`
+
 (NOTE: other video drivers can be found in the `xorg-drivers` group)
 
 Now you installed Arch Linux, enjoy!
-You can improve these instructions by creating a new pull request.
+You can improve these instructions by [creating a new pull request](https://github.com/GoDzM4TT3O/Arch/compare).
 
 + To upgrade Arch Linux, run: `sudo pacman -Syu`
 + To install a package, run: `sudo pacman -S <package>`

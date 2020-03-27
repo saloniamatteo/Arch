@@ -1,6 +1,5 @@
 Here are the steps that I followed in order to create an Arch VM:
-(You can use these instructions also on a real machine,
-the commands are the same)
+(You can use these instructions also on a real machine, the commands are the same)
 
 NOTE: if you don't like using vim, please replace "vim" with "nano"
 or an editor of your choice

@@ -80,42 +80,43 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 + 4.1) Mount the disk space: `mount /dev/sda1 /mnt`
 + 4.2) Mount the swap: `swapon /dev/sda2`
 
-## [Installation](https://wiki.archlinux.org/index.php/Installation_Guide#Installation)
+## 5) [Installation](https://wiki.archlinux.org/index.php/Installation_Guide#Installation)
 (If you don't like using vim, use nano)
 
-5) Update /etc/pacman.d/mirrorlist:
-5.1) vim /etc/pacman.d/mirrorlist
-5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose.
+Update /etc/pacman.d/mirrorlist:
++ 5.1) `vim /etc/pacman.d/mirrorlist`
++ 5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose.
++ 5.3) Save and quit
 
-6) Install arch base system: pacstrap /mnt base linux linux-firmware
+## 6) [Install essential packages](https://wiki.archlinux.org/index.php/Installation_Guide#Install_essential_packages)
++ 6.1) `pacstrap /mnt base linux linux-firmware`
 
-Configuring the system: https://wiki.archlinux.org/index.php/Installation_Guide#Configure_the_system
+## 7) [Configuring the system: Fstab](https://wiki.archlinux.org/index.php/Installation_Guide#Fstab)
 
-7) Create fstab: genfstab -U /mnt >> /mnt/etc/fstab
++ 7.1) Create fstab: `genfstab -U /mnt >> /mnt/etc/fstab`
 
-(If you don't like using vim, use nano)
+## 8) [Configuring the system: Chroot](https://wiki.archlinux.org/index.php/Installation_Guide#Chroot)
++ 8.1) Change root into the new system: `arch-chroot /mnt`
++ 8.2) Install vim to modify files: `pacman -S vim`
+(Change `vim` to `nano` if you don't like vim)
 
-8) Go into the new file system: arch-chroot /mnt
-8.1) Install vim to modify files: pacman -S vim
+## 9) [Localization](https://wiki.archlinux.org/index.php/Installation_Guide#Localization)
+(I will be using the Italian time; to select other timezones, press [TAB] after /zoneinfo/)
 
-Localization: https://wiki.archlinux.org/index.php/Installation_Guide#Localization
++ 9.1) Timezone: `ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime`
++ 9.2) Sync the clock: `hwclock --systohc`
 
-9) Set up locales (I will be using the Italian time *):
-(*to select other timezones, press [TAB] after /zoneinfo/)
-9.1) Timezone: ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
-9.2) Sync the clock: hwclock --systohc
-9.3) Set the language(s):
-(As I said, if you don't like vim, use nano)
-9.3.1) vim /etc/locale.gen
-9.3.2) Uncomment "en_US.UTF-8 UTF-8", then save and quit
-9.3.3) vim /etc/locale.conf
-9.3.4) Add "LANG=en_US.UTF-8", then save and quit
-9.3.5) Generate the locale: locale-gen
-9.4) Set the keyboard layout:
-9.4.1) vim /etc/vconsole.conf
-(Here after "KEYMAP" you need to type your keyboard's layout, you chose this before when you ran "loadkeys <code>")
-9.4.2) Add "KEYMAP=it", then save and quit
-(I chose "it" because it's the Italian keyboard layout I chose at the beginning; as I said it's unnecessary if you have a keyboard with an american keyboard layout)
++ 9.3) Set the language(s):
+	- 9.3.1) `vim /etc/locale.gen`
+	- 9.3.2) Uncomment `en_US.UTF-8 UTF-8`, then save and quit
+	- 9.3.3) `vim /etc/locale.conf`
+	- 9.3.4) Add `LANG=en_US.UTF-8`, then save and quit
+	- 9.3.5) Generate the locale: `locale-gen`
++ 9.4) Set the keyboard layout:
+	- 9.4.1) `vim /etc/vconsole.conf`
+	- 9.4.2) Add "KEYMAP=it", then save and quit
+(Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`)
+(I chose `it` because it's the Italian keyboard layout I chose at the beginning; as I said it's unnecessary if you have a keyboard with an american keyboard layout)
 
 10) Set a custom hostname (this is your computer's name):
 10.1) vim /etc/hostname

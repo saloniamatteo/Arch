@@ -172,16 +172,20 @@ Update /etc/pacman.d/mirrorlist:
 + 18.1) To login, type the `<user>`'s name
 + 18.2) Type the password you chose for `<user>` (it will be invisible)
 
-## 19) Installing X.Org
+## 19) [Installing X.Org](https://wiki.archlinux.org/index.php/Xorg#Installation)
 + 19.1) Install X.Org: `sudo pacman -S xorg`
 + 19.2) Select all packages by pressing [ENTER]
 
-## 20) Installing a Desktop Environment
+## 20) [Installing a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)
 - GNOME: `sudo pacman -S gnome gnome-extra`
-- KDE: `sudo pacman -S plasma kde-applications`
+- KDE Plasma: `sudo pacman -S plasma kde-applications`
 - LXDE: `sudo pacman -S lxde`
 - LXQT: `sudo pacman -S lxqt breeze-icons`
 - XFCE: `sudo pacman -S xfce4 xfce4-goodies`
+- Budgie: `sudo pacman -S gnome budgie-desktop`
+- Cinnamon ([please read](https://wiki.archlinux.org/index.php/Cinnamon#Installation)): `sudo pacman -S cinnamon`
+- Deepin ([please read](https://wiki.archlinux.org/index.php/Deepin#Installation)): `sudo pacman -S deepin deepin-extra networkmanager`
+- MATE: `sudo pacman -S mate mate-extra`
 
 ## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation):
 + 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`

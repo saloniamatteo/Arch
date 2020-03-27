@@ -1,3 +1,4 @@
+NOTE: these are older instructions. Please use README.md: https://github.com/GoDzM4TT3O/Arch/README.md
 Here are the steps that I followed in order to create an Arch VM:
 (You can use these instructions also on a real machine, the commands are the same)
 

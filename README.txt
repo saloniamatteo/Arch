@@ -81,7 +81,7 @@ USING CFDISK (graphical, more user friendly):
 5.1) vim /etc/pacman.d/mirrorlist
 5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose.
 
-6) Install arch base system: pacstrap /mnt base base-devel linux linux-firmware
+6) Install arch base system: pacstrap /mnt base linux linux-firmware
 
 7) Create fstab: genfstab -U /mnt >> /mnt/etc/fstab
 

@@ -31,6 +31,8 @@ If you haven't already, download the Arch ISO.
 
 After booting into the VM:
 
+Choose "Arch Linux", then hit [ENTER]
+
 (First of all I ran "loadkeys it" because my keyboard has an italian
 keyboard layout, but this is not needed, if you have a keyboard with an
 american keyboard layout)

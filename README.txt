@@ -121,6 +121,8 @@ USING CFDISK (graphical, more user friendly):
 
 14) Install sudo: pacman -S sudo
 
+(for example I chose "matteo" so I will replace "<user>" with "matteo")
+
 15) Add a new user: useradd -m <user>
 15.1) Add a password to the user: passwd <user>
 15.2) Add the user to necessary groups:

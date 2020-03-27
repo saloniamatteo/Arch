@@ -96,7 +96,7 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 	- 2.2) Select "dos"
 	- 2.2) Create a new partition (ext4): 18G, primary
 	- 2.3) Make the partition above bootable
-	 -2.4) Create a new partition (swap): 2G, primary
+	- 2.4) Create a new partition (swap): 2G, primary
 	- 2.5) Change the type of the partition above and select "82", which is swap
 	- 2.6) Write changes to disk
 	- 2.7) Quit

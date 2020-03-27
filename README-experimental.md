@@ -125,11 +125,14 @@ Update /etc/pacman.d/mirrorlist:
 ## 11) [Network Configuration: hosts](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
 + 11.1) `vim /etc/hosts`
 + 11.2) Add the following lines:
-```hosts
-127.0.0.1	localhost
-::1		localhost
-127.0.1.1	<hostname>.localdomain <hostname>
-```
+
+`127.0.0.1	localhost`
+
+`::1		localhost`
+
+`127.0.1.1	<hostname>.localdomain <hostname>`
+
+
 + 11.3) Save the file and exit
 
 ## 12) [Set the root password](https://wiki.archlinux.org/index.php/Installation_Guide#Root_password)

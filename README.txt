@@ -58,10 +58,13 @@ USING FDISK (like the terminal prompt, not user friendly):
 
 USING CFDISK (graphical, more user friendly):
 2.1) cfdisk
-2.2) Create a new partition (ext4): [ENTER], 18G, primary, bootable
-2.3) Create a new partition (swap): [ENTER], 2G, primary, type swap
-2.4) Write changes to disk
-2.5) Quit
+2.2) Select "dos"
+2.2) Create a new partition (ext4): 18G, primary
+2.3) Make the partition above bootable
+2.4) Create a new partition (swap): 2G, primary
+2.5) Change the type of the partition above and select "82", which is swap
+2.6) Write changes to disk
+2.7) Quit
 
 3) Create the file system
 3.1) ext4: mkfs.ext4 /dev/sda1

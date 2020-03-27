@@ -38,8 +38,12 @@ Choose "Arch Linux", then hit [ENTER]
 keyboard layout, but this is not needed, if you have a keyboard with an
 american keyboard layout)
 
+Set the keyboard layout: https://wiki.archlinux.org/index.php/Installation_Guide#Set_the_keyboard_layout
+
 To find out available keyboard layouts, run: ls /usr/share/kbd/keymaps/**/*.map.gz
 Once you find your keyboard layout, run: loadkeys <keyboard-layout>
+
+Connect to the internet: https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet
 
 1) Check if the network is working:
 1.1) Check the network interfaces: ip link

@@ -91,6 +91,7 @@ USING CFDISK (graphical, more user friendly):
 9.1) Timezone: ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 9.2) Sync the clock: hwclock --systohc
 9.3) Set the language(s):
+(As I said, if you don't like vim, use nano)
 9.3.1) vim /etc/locale.gen
 9.3.2) Uncomment "en_US.UTF-8 UTF-8", then save and quit
 9.3.3) vim /etc/locale.conf
@@ -98,10 +99,9 @@ USING CFDISK (graphical, more user friendly):
 9.3.5) Generate the locale: locale-gen
 9.4) Set the keyboard layout:
 9.4.1) vim /etc/vconsole.conf
+(Here after "KEYMAP" you need to type your keyboard's layout, you chose this before when you ran "loadkeys <code>")
 9.4.2) Add "KEYMAP=it", then save and quit
-(I chose "it" because it's the Italian keyboard layout I chose at the
-beginning; as I said it's unnecessary if you have a keyboard with an
-american keyboard layout)
+(I chose "it" because it's the Italian keyboard layout I chose at the beginning; as I said it's unnecessary if you have a keyboard with an american keyboard layout)
 
 10) Set a custom hostname (this is your computer's name):
 10.1) vim /etc/hostname
@@ -113,6 +113,7 @@ american keyboard layout)
 127.0.0.1	localhost
 ::1		localhost
 127.0.1.1	<hostname>.localdomain <hostname>
+11.3) Save the file and exit
 
 12) Set the root password: passwd
 

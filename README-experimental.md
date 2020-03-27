@@ -118,11 +118,11 @@ Update /etc/pacman.d/mirrorlist:
 (Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`)
 (I chose `it` because it's the Italian keyboard layout I chose at the beginning; as I said it's unnecessary if you have a keyboard with an american keyboard layout)
 
-# 10) [Network Configuration: hostname](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
+## 10) [Network Configuration: hostname](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
 + 10.1) vim /etc/hostname
 + 10.2) Write an hostname, like "arch" 
 
-# 11) [Network Configuration: hosts](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
+## 11) [Network Configuration: hosts](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
 + 11.1) `vim /etc/hosts`
 + 11.2) Add the following lines:
 ```hosts
@@ -135,48 +135,51 @@ Update /etc/pacman.d/mirrorlist:
 ## 12) [Set the root password](https://wiki.archlinux.org/index.php/Installation_Guide#Root_password)
 + 12.1) `passwd`
 
-13) Enable the network: systemctl enable dhcpcd
+## 13 Install sudo: 
++ 13.1) `pacman -S sudo`
 
-14) Install sudo: pacman -S sudo
+## 14) Add a new user:
+(for example I chose `matteo` so I will replace `<user>` with `matteo`)
++ 14.1) `useradd -m <user>`
++ 14.2) Add a password to the user: `passwd <user>`
++ 14.3) Add the user to necessary groups: `usermod -aG wheel,audio,video,optical,storage <user>`
++ 14.4) Check user is part of the groups we added above: `groups <user>`
++ 14.5) Add user to sudoers: `visudo`
+	- 14.6) Search `# %wheel ALL=(ALL) ALL`, remove the `#` at the beginning
 
-(for example I chose "matteo" so I will replace "<user>" with "matteo")
+## 15) [Install the bootloader](https://wiki.archlinux.org/index.php/Installation_Guide#Boot_loader)
++ 15.1) `pacman -S grub`
++ 15.2) Install grub to disk: `grub-install /dev/sda`
++ 15.3) Configure grub: `grub-mkconfig -o /boot/grub/grub.cfg`
 
-15) Add a new user: useradd -m <user>
-15.1) Add a password to the user: passwd <user>
-15.2) Add the user to necessary groups:
-15.2) usermod -aG wheel,audio,video,optical,storage <user>
-15.3) Check user is part of the groups: groups <user>
-15.4) Add user to sudoers: visudo
-15.5) Search "# %wheel ALL=(ALL) ALL", remove the # at the beginning
+## 16) Install the network tools
++ 16.1) `pacman -S dhcpcd net-tools`
++ 16.2) After the above is done, enable `dhcpcd`: `systemctl enable dhcpcd`
 
-16) Install the bootloader
-16.1) pacman -S grub
-16.2) Install grub to disk: grub-install /dev/sda
-16.3) Configure grub: grub-mkconfig -o /boot/grub/grub.cfg
+## 17) [Reboot](https://wiki.archlinux.org/index.php/Installation_Guide#Reboot)
++ 17.1) Exit out of chroot: `exit`
++ 17.2) Poweroff the machine: `poweroff`
++ 17.3) Go into the VM settings and remove the Arch ISO
++ 17.4) Start the VM
 
-17) Before rebooting, we need to install the network tools
-17.1) pacman -S dhcpcd net-tools
-17.2) After the above is done, enable dhcpcd: systemctl enable dhcpcd
-17.3) Exit out of chroot: exit
-17.4) Poweroff the machine: poweroff (you can also use shutdown now)
-17.5) Go into the VM settings and remove the Arch ISO
-17.6) Start the VM
+(If you do this on a real machine make sure to remove the Arch Live CD/DVD/USB)
 
-18) Log into the <user> profile
-18.1) Type the <user>'s name
-18.2) Type the password you chose for <user> (it will be invisible)
+## 18) [Post-installation](https://wiki.archlinux.org/index.php/Installation_Guide#Post-installation)
++ 18.1) To login, type the `<user>`'s name
++ 18.2) Type the password you chose for `<user>` (it will be invisible)
 
-19) Install X.Org: sudo pacman -S xorg
-19.1) Select all packages by pressing [ENTER]
+## 19) Installing X.Org
++ 19.1) Install X.Org: `sudo pacman -S xorg`
++ 19.2) Select all packages by pressing [ENTER]
 
-20) Finally, choose between:
-- GNOME: sudo pacman -S gnome gnome-extra;
-- KDE: sudo pacman -S plasma kde-applications;
-- LXDE: sudo pacman -S lxde;
-- LXQT: sudo pacman -S lxqt breeze-icons;
-- XFCE: sudo pacman -S xfce4 xfce4-goodies;
+## 20) Installing a Desktop Environment
+- GNOME: `sudo pacman -S gnome gnome-extra`
+- KDE: `sudo pacman -S plasma kde-applications`
+- LXDE: `sudo pacman -S lxde`
+- LXQT: `sudo pacman -S lxqt breeze-icons`
+- XFCE: `sudo pacman -S xfce4 xfce4-goodies`
 
-21) Install necessary drivers (graphics drivers and CPU drivers):
+## 21) Install necessary drivers (graphics drivers and CPU drivers):
 21.1) AMD: sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode
 21.2) Intel: sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode
 21.3) NVIDIA: sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils

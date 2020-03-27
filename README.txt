@@ -76,11 +76,15 @@ USING CFDISK (graphical, more user friendly):
 
 (If you don't like using vim, use nano)
 
+Installation: https://wiki.archlinux.org/index.php/Installation_Guide#Installation
+
 5) Update /etc/pacman.d/mirrorlist:
 5.1) vim /etc/pacman.d/mirrorlist
 5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose.
 
 6) Install arch base system: pacstrap /mnt base linux linux-firmware
+
+Configuring the system: https://wiki.archlinux.org/index.php/Installation_Guide#Configure_the_system
 
 7) Create fstab: genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -88,6 +92,8 @@ USING CFDISK (graphical, more user friendly):
 
 8) Go into the new file system: arch-chroot /mnt
 8.1) Install vim to modify files: pacman -S vim
+
+Localization: https://wiki.archlinux.org/index.php/Installation_Guide#Localization
 
 9) Set up locales (I will be using the Italian time *):
 (*to select other timezones, press [TAB] after /zoneinfo/)

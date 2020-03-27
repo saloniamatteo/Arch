@@ -191,11 +191,13 @@ Update /etc/pacman.d/mirrorlist:
 + 18.1) To login, type the `<user>`'s name
 + 18.2) Type the password you chose for `<user>` (it will be invisible)
 
-## 19) [Installing X.Org](https://wiki.archlinux.org/index.php/Xorg#Installation)
+## 19) [Install X.Org](https://wiki.archlinux.org/index.php/Xorg#Installation)
 + 19.1) Install X.Org: `sudo pacman -S xorg`
 + 19.2) Select all packages by pressing [ENTER]
 
-## 20) [Installing a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)
+## 20) [Install a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)
+Please choose one of the following:
+
 - GNOME: `sudo pacman -S gnome gnome-extra`
 - KDE Plasma: `sudo pacman -S plasma kde-applications`
 - LXDE: `sudo pacman -S lxde`

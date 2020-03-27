@@ -170,5 +170,4 @@ USING CFDISK (graphical, more user friendly):
 
 To upgrade Arch Linux, run: sudo pacman -Syu
 
-(After the Live CD/DVD is removed and we are logged into our user
-profile, all of the commands starting with pacman must be ran as root, or else they will not work)
+(After the Live CD/DVD is removed and we are logged into our user profile, all of the commands starting with pacman must be ran as root, or else they will not work)

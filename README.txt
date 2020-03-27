@@ -55,6 +55,7 @@ USING FDISK (like the terminal prompt, not user friendly):
 2.3) Create a new partition (swap): n, p, 2, [ENTER], +2G, [ENTER]
 2.4) Change partition type: t, 2, 82
 2.5) Write changes to disk: w
+2.6) Quit
 
 USING CFDISK (graphical, more user friendly):
 2.1) cfdisk

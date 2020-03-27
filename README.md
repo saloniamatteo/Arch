@@ -8,6 +8,7 @@ I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php
 
 If you haven't already, download [the Arch ISO](https://www.archlinux.org/download).
 
+### If you use a VM:
 + Open virtualbox
 
 + Click "New"
@@ -34,6 +35,13 @@ If you haven't already, download [the Arch ISO](https://www.archlinux.org/downlo
 	- Select "Live CD/DVD"
 + Click "Ok"
 + Start the VM
+
+### If you use a real machine
++ Get a hold of a DVD/USB with at least 1GB of storage
++ Using a tool like [Etcher](https://balena.io), flash the ISO onto the USB
++ Alternatively, using a tool like [Brasero](https://wiki.gnome.org/Apps/Brasero/Documentation#Installing) on Linux or [ImgBurn](https://imgburn.com/index.php?act=download) on Windows, flash the ISO onto the DVD.
++ Put the DVD/USB in your machine
++ Open the BIOS/UEFI and [modify the boot order](https://www.pcsteps.com/1508-change-the-boot-order-usb-dvd-bios-uefi/), choosing the DVD/USB as the first boot device.
 
 ***
 

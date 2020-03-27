@@ -5,6 +5,8 @@ the commands are the same)
 NOTE: if you don't like using vim, please replace "vim" with "nano"
 or an editor of your choice
 
+If you haven't already, download the Arch ISO.
+
 -> Open virtualbox
 -> Click "New"
 -> Click "Expert Mode"

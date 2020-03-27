@@ -192,8 +192,8 @@ Update /etc/pacman.d/mirrorlist:
 Now you installed Arch Linux, enjoy!
 You can improve these instructions by creating a new pull request.
 
-To upgrade Arch Linux, run: `sudo pacman -Syu`
-To install a package, run: `sudo pacman -S <package>`
-To remove a package, run: `sudo pacman R <package>`
++ To upgrade Arch Linux, run: `sudo pacman -Syu`
++ To install a package, run: `sudo pacman -S <package>`
++ To remove a package, run: `sudo pacman R <package>`
 
 (After the Live CD/DVD is removed and we are logged into our user profile, all of the commands starting with pacman must be ran as root, or else they will not work)

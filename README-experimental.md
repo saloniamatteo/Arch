@@ -118,19 +118,22 @@ Update /etc/pacman.d/mirrorlist:
 (Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`)
 (I chose `it` because it's the Italian keyboard layout I chose at the beginning; as I said it's unnecessary if you have a keyboard with an american keyboard layout)
 
-10) Set a custom hostname (this is your computer's name):
-10.1) vim /etc/hostname
-10.2) Write an hostname, like "arch" 
+# 10) [Network Configuration: hostname](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
++ 10.1) vim /etc/hostname
++ 10.2) Write an hostname, like "arch" 
 
-11) Creating the hosts file:
-11.1) vim /etc/hosts
-11.2) Add the following lines:
+# 11) [Network Configuration: hosts](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
++ 11.1) `vim /etc/hosts`
++ 11.2) Add the following lines:
+```hosts
 127.0.0.1	localhost
 ::1		localhost
 127.0.1.1	<hostname>.localdomain <hostname>
-11.3) Save the file and exit
+```
++ 11.3) Save the file and exit
 
-12) Set the root password: passwd
+## 12) [Set the root password](https://wiki.archlinux.org/index.php/Installation_Guide#Root_password)
++ 12.1) `passwd`
 
 13) Enable the network: systemctl enable dhcpcd
 

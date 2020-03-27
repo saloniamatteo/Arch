@@ -197,8 +197,10 @@ Update /etc/pacman.d/mirrorlist:
 ***
 
 Now you installed Arch Linux, enjoy!
+
 You can improve these instructions by [creating a new pull request](https://github.com/GoDzM4TT3O/Arch/compare).
 
+You can also create [a new issue](https://github.com/GoDzM4TT3O/Arch/issues/new/choose).
 + To upgrade Arch Linux, run: `sudo pacman -Syu`
 + To install a package, run: `sudo pacman -S <package>`
 + To remove a package, run: `sudo pacman R <package>`

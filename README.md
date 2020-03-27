@@ -1,4 +1,5 @@
-## Here are the steps that I followed in order to create an Arch VM:
+## How to install Arch Linux
+(These instructions were written by me, following the Arch Wiki, to install Arch on a VM)
 (You can use these instructions also on a real machine, the commands are the same)
 
 NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an editor of your choice
@@ -182,12 +183,17 @@ Update /etc/pacman.d/mirrorlist:
 - LXQT: `sudo pacman -S lxqt breeze-icons`
 - XFCE: `sudo pacman -S xfce4 xfce4-goodies`
 
-## 21) Install necessary drivers (graphics drivers and CPU drivers):
-21.1) AMD: sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode
-21.2) Intel: sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode
-21.3) NVIDIA: sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils
-(NOTE: other video drivers can be found in the "xorg-drivers" group)
+## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation):
++ 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`
++ 21.2) Intel: `sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode`
++ 21.3) NVIDIA: `sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils`
+(NOTE: other video drivers can be found in the `xorg-drivers` group)
 
-To upgrade Arch Linux, run: sudo pacman -Syu
+Now you installed Arch Linux, enjoy!
+You can improve these instructions by creating a new pull request.
+
+To upgrade Arch Linux, run: `sudo pacman -Syu`
+To install a package, run: `sudo pacman -S <package>`
+To remove a package, run: `sudo pacman R <package>`
 
 (After the Live CD/DVD is removed and we are logged into our user profile, all of the commands starting with pacman must be ran as root, or else they will not work)

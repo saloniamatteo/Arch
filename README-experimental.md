@@ -49,9 +49,9 @@ To find out available keyboard layouts, run: `ls /usr/share/kbd/keymaps/**/*.map
 Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 
 ## 1) [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
-	- 1.1) Check the network interfaces: `ip link`
-	- 1.2) If the above looks good, check if internet works: `ping archlinux.org`
-	- 1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
+- 1.1) Check the network interfaces: `ip link`
+- 1.2) If the above looks good, check if internet works: `ping archlinux.org`
+- 1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
 
 ## 2) [Partition the disk](https://wiki.archlinux.org/index.php/Installation_Guide#Partition_the_disks)
 + USING `fdisk` (like the terminal prompt, not user friendly): 

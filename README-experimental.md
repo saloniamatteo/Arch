@@ -48,44 +48,40 @@ To find out available keyboard layouts, run: `ls /usr/share/kbd/keymaps/**/*.map
 
 Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 
-## [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
+## 1) [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
+	- 1.1) Check the network interfaces: `ip link`
+	- 1.2) If the above looks good, check if internet works: `ping archlinux.org`
+	- 1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
 
-1) Check if the network is working
-1.1) Check the network interfaces: `ip link`
-1.2) If the above looks good, check if internet works: `ping archlinux.org`
-1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
+## 2) [Partition the disk](https://wiki.archlinux.org/index.php/Installation_Guide#Partition_the_disks)
++ USING `fdisk` (like the terminal prompt, not user friendly): 
+	- 2.1) `fdisk /dev/sda`
+	- 2.2) Create a new partition (ext4): n, p, 1, 2048, +18G, [ENTER]
+	- 2.3) Create a new partition (swap): n, p, 2, [ENTER], +2G, [ENTER]
+	- 2.4) Change partition type: t, 2, 82
+	- 2.5) Write changes to disk: w
+	- 2.6) Quit
 
-2) Partition the disk (I recommend using `cfdisk`):
++ USING `cfdisk` (graphical, more user friendly):
+	- 2.1) `cfdisk`
+	- 2.2) Select "dos"
+	- 2.2) Create a new partition (ext4): 18G, primary
+	- 2.3) Make the partition above bootable
+	 -2.4) Create a new partition (swap): 2G, primary
+	- 2.5) Change the type of the partition above and select "82", which is swap
+	- 2.6) Write changes to disk
+	- 2.7) Quit
 
-USING FDISK (like the terminal prompt, not user friendly): 
-2.1) fdisk /dev/sda
-2.2) Create a new partition (ext4): n, p, 1, 2048, +18G, [ENTER]
-2.3) Create a new partition (swap): n, p, 2, [ENTER], +2G, [ENTER]
-2.4) Change partition type: t, 2, 82
-2.5) Write changes to disk: w
-2.6) Quit
+## 3) [Create the file system](https://wiki.archlinux.org/index.php/Installation_Guide#Format_the_partitions)
++ 3.1) ext4: `mkfs.ext4 /dev/sda1`
++ 3.2) swap: `mkswap /dev/sda2`
 
-USING CFDISK (graphical, more user friendly):
-2.1) cfdisk
-2.2) Select "dos"
-2.2) Create a new partition (ext4): 18G, primary
-2.3) Make the partition above bootable
-2.4) Create a new partition (swap): 2G, primary
-2.5) Change the type of the partition above and select "82", which is swap
-2.6) Write changes to disk
-2.7) Quit
+## 4) [Mount the partitions](https://wiki.archlinux.org/index.php/Installation_Guide#Mount_the_file_systems)
++ 4.1) Mount the disk space: `mount /dev/sda1 /mnt`
++ 4.2) Mount the swap: `swapon /dev/sda2`
 
-3) Create the file system
-3.1) ext4: mkfs.ext4 /dev/sda1
-3.2) swap: mkswap /dev/sda2
-
-4) Mount the partitions
-4.1) Mount the disk space: mount /dev/sda1 /mnt
-4.2) Mount the swap: swapon /dev/sda2
-
+## [Installation](https://wiki.archlinux.org/index.php/Installation_Guide#Installation)
 (If you don't like using vim, use nano)
-
-Installation: https://wiki.archlinux.org/index.php/Installation_Guide#Installation
 
 5) Update /etc/pacman.d/mirrorlist:
 5.1) vim /etc/pacman.d/mirrorlist

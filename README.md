@@ -225,12 +225,13 @@ I will provide examples for GNOME, LXDE, LXQT, MATE and XFCE4. Other examples ca
 + 20.1) `vim ~/.xinitrc`
 + 20.2) For example, if you chose GNOME, paste the code into the file above.
   - GNOME:
-       
+       ```
        export XDG_SESSION_TYPE=x11
        
        export GDK_BACKEND=x11
        
        exec gnome-session
+       ```
        
   - LXDE:
        

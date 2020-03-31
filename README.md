@@ -216,9 +216,40 @@ Please choose one of the following:
 - [GNOME](https://wiki.archlinux.org/index.php/GNOME): `sudo pacman -S gnome gnome-extra networkmanager`
 - [KDE Plasma](https://wiki.archlinux.org/index.php/KDE_Plasma): `sudo pacman -S plasma kde-applications`
 - [LXDE](https://wiki.archlinux.org/index.php/LXDE): `sudo pacman -S lxde`
-- [LXQT](https://wiki.archlinux.org/index.php/LXQt): `sudo pacman -S lxqt breeze-icons`
+- [LXQt](https://wiki.archlinux.org/index.php/LXQt): `sudo pacman -S lxqt breeze-icons`
 - [MATE](https://wiki.archlinux.org/index.php/MATE): `sudo pacman -S mate mate-extra`
 - [XFCE](https://wiki.archlinux.org/index.php/Xfce): `sudo pacman -S xfce4 xfce4-goodies`
+
+After installing Xorg, a Desktop Environment and its dependencies, create a new file called .xinitrc.
+I will provide examples for GNOME, LXDE, LXQT, MATE and XFCE4. Other examples can be found if you click on the DE you chose.
++ 20.1) `vim ~/.xinitrc`
++ 20.2) For example, if you chose GNOME, paste the code into the file above.
+  - GNOME:
+       
+       export XDG_SESSION_TYPE=x11
+       
+       export GDK_BACKEND=x11
+       
+       exec gnome-session
+       
+  - LXDE:
+       
+       exec startlxde
+       
+  - LXQt: 
+       
+       exec startlxqt
+       
+  - MATE:
+       
+       exec mate-session
+       
+  - XFCE4:
+       
+       exec startxfce4
+
++ 20.3) After writing the correct text, save the file and exit.
++ 20.4) Now, to get into the Desktop Environment, all you have to run is `startx`.
 
 ## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation)
 + 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`

@@ -96,6 +96,7 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 
 + USING `cfdisk` (graphical, more user friendly):
 	- 2.1) `cfdisk`
+		- 2.1.1) If there are any other partitions, delete them.
 	- 2.2) Select "dos"
 	- 2.2) Create a new partition (ext4): 18G, primary
 	- 2.3) Make the partition above bootable

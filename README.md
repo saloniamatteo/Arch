@@ -235,19 +235,19 @@ I will provide examples for GNOME, LXDE, LXQT, MATE and XFCE4. Other examples ca
        
   - LXDE:
        
-       exec startlxde
+       `exec startlxde`
        
   - LXQt: 
        
-       exec startlxqt
+       `exec startlxqt`
        
   - MATE:
        
-       exec mate-session
+       `exec mate-session`
        
   - XFCE4:
        
-       exec startxfce4
+       `exec startxfce4`
 
 + 20.3) After writing the correct text, save the file and exit.
 + 20.4) Now, to get into the Desktop Environment, all you have to run is `startx`.

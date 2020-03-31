@@ -210,7 +210,7 @@ Update /etc/pacman.d/mirrorlist:
 ## 20) [Install a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)
 Please choose one of the following:
 
-- [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gnome-extra budgie-desktop`
+- [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gnome budgie-desktop`
 - Cinnamon ([please read](https://wiki.archlinux.org/index.php/Cinnamon#Installation)): `sudo pacman -S cinnamon`
 - Deepin ([please read](https://wiki.archlinux.org/index.php/Deepin#Installation)): `sudo pacman -S deepin deepin-extra networkmanager`
 - [GNOME](https://wiki.archlinux.org/index.php/GNOME): `sudo pacman -S gnome gnome-extra networkmanager`
@@ -221,10 +221,25 @@ Please choose one of the following:
 - [XFCE](https://wiki.archlinux.org/index.php/Xfce): `sudo pacman -S xfce4 xfce4-goodies`
 
 After installing Xorg, a Desktop Environment and its dependencies, create a new file called .xinitrc.
-I will provide examples for GNOME, LXDE, LXQT, MATE and XFCE4. Other examples can be found if you click on the DE you chose.
+I have provided examples for all of the DEs above.
 + 20.1) `vim ~/.xinitrc`
 + 20.2) For example, if you chose GNOME, paste the code into the file above.
+  - Budgie:
+       ```
+       export XDG_CURRENT_DESKTOP=Budgie:GNOME
+       exec budgie-desktop
+       ```
+       
+  - Cinnamon:
+     
+      `exec cinnamon-session`
+     
+  - Deepin:
+  
+     `exec startdde`
+
   - GNOME:
+  
        ```
        export XDG_SESSION_TYPE=x11
        
@@ -232,6 +247,10 @@ I will provide examples for GNOME, LXDE, LXQT, MATE and XFCE4. Other examples ca
        
        exec gnome-session
        ```
+       
+  - KDE Plasma:
+  
+       `exec startplasma-x11`
        
   - LXDE:
        

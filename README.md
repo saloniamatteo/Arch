@@ -210,7 +210,7 @@ Please choose one of the following:
 - [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gnome budgie-desktop`
 - Cinnamon ([please read](https://wiki.archlinux.org/index.php/Cinnamon#Installation)): `sudo pacman -S cinnamon`
 - Deepin ([please read](https://wiki.archlinux.org/index.php/Deepin#Installation)): `sudo pacman -S deepin deepin-extra networkmanager`
-- [GNOME](https://wiki.archlinux.org/index.php/GNOME): `sudo pacman -S gnome gnome-extra`
+- [GNOME](https://wiki.archlinux.org/index.php/GNOME): `sudo pacman -S gnome gnome-extra networkmanager`
 - [KDE Plasma](https://wiki.archlinux.org/index.php/KDE_Plasma): `sudo pacman -S plasma kde-applications`
 - [LXDE](https://wiki.archlinux.org/index.php/LXDE): `sudo pacman -S lxde`
 - [LXQT](https://wiki.archlinux.org/index.php/LXQt): `sudo pacman -S lxqt breeze-icons`
@@ -226,13 +226,15 @@ Please choose one of the following:
 
 ***
 
+How to manage packages on Arch Linux:
++ To upgrade Arch Linux, run: `sudo pacman -Syu`
++ To install a package, run: `sudo pacman -S <package>`
++ To remove a package, run: `sudo pacman R <package>`
+
+***
+
 Now you installed Arch Linux, enjoy!
 
 You can improve these instructions by [creating a new pull request](https://github.com/GoDzM4TT3O/Arch/compare).
 
 You can also create [a new issue](https://github.com/GoDzM4TT3O/Arch/issues/new/choose).
-+ To upgrade Arch Linux, run: `sudo pacman -Syu`
-+ To install a package, run: `sudo pacman -S <package>`
-+ To remove a package, run: `sudo pacman R <package>`
-
-(After the Live CD/DVD is removed and we are logged into our user profile, all of the commands starting with pacman must be ran as root using `sudo`, or else they will not work)

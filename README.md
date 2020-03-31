@@ -75,7 +75,10 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 ## 1) [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
 - 1.1) Check the network interfaces: `ip link`
 - 1.2) If the above looks good, check if internet works: `ping archlinux.org`
-- 1.3) If the above looks good, sync the clock: `timedatectl set-ntp true`
++ 1.3) If you can't connect to `archlinux.org`, make sure you run: `dhcpcd <interface>`
+  - 1.3.1) if you connect wirelessly, use `wlp4s0`, `wlan0` or any other wireless interface
+  - 1.3.2) if you connect via ethernet, use `enp2s0`, `eth0`, or any other wired interface
+- 1.4) If the above looks good, sync the clock: `timedatectl set-ntp true`
 
 ## 2) [Partition the disk](https://wiki.archlinux.org/index.php/Installation_Guide#Partition_the_disks)
 (NOTE: we will be using a 20GB virtual HDD, if you use a real machine, you need to use bigger values. Please read the SWAP section above before continuing)

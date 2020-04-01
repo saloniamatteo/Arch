@@ -274,20 +274,20 @@ I have provided examples for all of the DEs above.
 + 20.5) Now we also need to enable the Display Manager.
 (If a Display Manager does not load, please refer to [this page](https://wiki.archlinux.org/index.php/Display_manager#Loading_the_display_manager)
 
-  -GDM (Budgie, GNOME):
+  - GDM (Budgie, GNOME):
   
   `sudo systemctl enable gdm`
 
-  -LightDM (Cinnamon, Deepin, MATE, XFCE:
+  - LightDM (Cinnamon, Deepin, MATE, XFCE:
   
   `sudo systemctl enable lightdm`
   
   
-  -LXDM (LXDE):
+  - LXDM (LXDE):
   
   `sudo systemctl enable lxdm`
   
-  -SDDM (KDE Plasma, LXQt):
+  - SDDM (KDE Plasma, LXQt):
   
   `sudo systemctl enable sddm`
 
@@ -302,7 +302,7 @@ I have provided examples for all of the DEs above.
 ## 22) [Install audio sound system](https://wiki.archlinux.org/index.php/Sound_system)
 (ALSA is already present in the stock kernel)
 
-`sudo pacman -S pulseaudio pulseaudio-alsa`
+`sudo pacman -S pulseaudio pulseaudio-alsa alsa-utils`
 
 You might also want to install some codecs (audio, image & video):
 

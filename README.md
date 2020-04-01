@@ -301,6 +301,7 @@ I have provided examples for all of the DEs above.
 
 ## 22) [Install audio sound system](https://wiki.archlinux.org/index.php/Sound_system)
 (ALSA is already present in the stock kernel)
+
 `sudo pacman -S pulseaudio pulseaudio-alsa`
 
 You might also want to install some codecs (audio, image & video):

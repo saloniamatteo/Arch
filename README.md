@@ -211,14 +211,14 @@ Update /etc/pacman.d/mirrorlist:
 Please choose one of the following:
 
 - [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gnome budgie-desktop`
-- Cinnamon ([please read](https://wiki.archlinux.org/index.php/Cinnamon#Installation)): `sudo pacman -S cinnamon`
-- Deepin ([please read](https://wiki.archlinux.org/index.php/Deepin#Installation)): `sudo pacman -S deepin deepin-extra networkmanager`
+- Cinnamon ([please read](https://wiki.archlinux.org/index.php/Cinnamon#Installation)): `sudo pacman -S cinnamon lightdm`
+- Deepin ([please read](https://wiki.archlinux.org/index.php/Deepin#Installation)): `sudo pacman -S deepin deepin-extra networkmanager lightdm`
 - [GNOME](https://wiki.archlinux.org/index.php/GNOME): `sudo pacman -S gnome gnome-extra networkmanager`
-- [KDE Plasma](https://wiki.archlinux.org/index.php/KDE_Plasma): `sudo pacman -S plasma kde-applications`
-- [LXDE](https://wiki.archlinux.org/index.php/LXDE): `sudo pacman -S lxde`
-- [LXQt](https://wiki.archlinux.org/index.php/LXQt): `sudo pacman -S lxqt breeze-icons`
-- [MATE](https://wiki.archlinux.org/index.php/MATE): `sudo pacman -S mate mate-extra`
-- [XFCE](https://wiki.archlinux.org/index.php/Xfce): `sudo pacman -S xfce4 xfce4-goodies`
+- [KDE Plasma](https://wiki.archlinux.org/index.php/KDE_Plasma): `sudo pacman -S plasma kde-applications sddm`
+- [LXDE](https://wiki.archlinux.org/index.php/LXDE): `sudo pacman -S lxde lxdm`
+- [LXQt](https://wiki.archlinux.org/index.php/LXQt): `sudo pacman -S lxqt breeze-icons sddm`
+- [MATE](https://wiki.archlinux.org/index.php/MATE): `sudo pacman -S mate mate-extra lightdm`
+- [XFCE](https://wiki.archlinux.org/index.php/Xfce): `sudo pacman -S xfce4 xfce4-goodies lightdm`
 
 After installing Xorg, a Desktop Environment and its dependencies, create a new file called .xinitrc.
 I have provided examples for all of the DEs above.
@@ -271,12 +271,41 @@ I have provided examples for all of the DEs above.
 + 20.3) After writing the correct text, save the file and exit.
 + 20.4) Now, to get into the Desktop Environment, all you have to run is `startx`.
 
++ 20.5) Now we also need to enable the Display Manager.
+(If a Display Manager does not load, please refer to [this page](https://wiki.archlinux.org/index.php/Display_manager#Loading_the_display_manager)
+
+  -GDM (Budgie, GNOME):
+  
+  `sudo systemctl enable gdm`
+
+  -LightDM (Cinnamon, Deepin, MATE, XFCE:
+  
+  `sudo systemctl enable lightdm`
+  
+  
+  -LXDM (LXDE):
+  
+  `sudo systemctl enable lxdm`
+  
+  -SDDM (KDE Plasma, LXQt):
+  
+  `sudo systemctl enable sddm`
+
+
 ## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation)
 + 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`
 + 21.2) Intel: `sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode`
 + 21.3) NVIDIA: `sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils`
 
 (NOTE: other video drivers can be found in the `xorg-drivers` group)
+
+## 22) [Install audio sound system](https://wiki.archlinux.org/index.php/Sound_system)
+(ALSA is already present in the stock kernel)
+`sudo pacman -S pulseaudio pulseaudio-alsa`
+
+You might also want to install some codecs (audio, image & video):
+
+`sudo pacman -S flac faac wavpack libmad opus libvorbis openjpeg libwebp x265 libde265 x264 libmpeg2 libvpx`
 
 ***
 

@@ -209,7 +209,9 @@ Update /etc/pacman.d/mirrorlist:
 + 19.2) Select all packages by pressing [ENTER]
 
 ## 20) [Install a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)
-Please choose one of the following:
+NOTE: Instead of using a Desktop Environment, you can directly install a Window Manager. I use [i3](https://wiki.archlinux.org/index.php/i3). If you would like to use i3, follow this guide I wrote [here](https://godzm4tt3o.js.org/dotfiles/).
+
+Please choose one of the following Desktop Environments:
 
 - [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gnome budgie-desktop`
 - Cinnamon ([please read](https://wiki.archlinux.org/index.php/Cinnamon#Installation)): `sudo pacman -S cinnamon lightdm`

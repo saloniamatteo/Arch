@@ -281,7 +281,7 @@ I have provided examples for all of the DEs above.
   
   `sudo systemctl enable gdm`
 
-  - LightDM (Cinnamon, Deepin, MATE, XFCE:
+  - LightDM (Cinnamon, Deepin, MATE, XFCE):
   
   `sudo systemctl enable lightdm`
   

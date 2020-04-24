@@ -131,7 +131,7 @@ Update /etc/pacman.d/mirrorlist:
 + 5.3) Save and quit
 
 ## 6) [Install essential packages](https://wiki.archlinux.org/index.php/Installation_Guide#Install_essential_packages)
-+ 6.1) `pacstrap /mnt base linux linux-firmware`
++ 6.1) `pacstrap /mnt base base-devel linux linux-firmware linux-headers`
 
 ## 7) [Configuring the system: Fstab](https://wiki.archlinux.org/index.php/Installation_Guide#Fstab)
 

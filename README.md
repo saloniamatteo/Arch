@@ -75,6 +75,7 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`
 ## 1) [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
 Note: if you want to use Wi-Fi, run `wifi-menu` to connect to a wireless network.
 If, for some reason, `wifi-menu` fails, run these two commands:
+
 (If the wireless network interface isn't `wlan0`, use the one you have)
 
 ```

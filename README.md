@@ -168,11 +168,14 @@ Update /etc/pacman.d/mirrorlist:
 + 11.1) `vim /etc/hosts`
 + 11.2) Add the following lines:
 
-`127.0.0.1	localhost`
+```
+# IPv4
+127.0.0.1	localhost
+127.0.1.1	<your hostname>.localdomain <your hostname>
 
-`::1		localhost`
-
-`127.0.1.1	<hostname>.localdomain <hostname>`
+# IPv6
+::1		localhost
+```
 
 
 + 11.3) Save the file and exit
@@ -193,7 +196,7 @@ Update /etc/pacman.d/mirrorlist:
 	- 14.6) Search `# %wheel ALL=(ALL) ALL`, remove the `#` at the beginning
 
 ## 15) [Install the bootloader](https://wiki.archlinux.org/index.php/Installation_Guide#Boot_loader)
-+ 15.1) `pacman -S grub`
++ 15.1) `pacman -S grub efibootmgr os-prober freetype2 dosfstools`
 + 15.2) Install grub to disk: `grub-install /dev/sda`
 + 15.3) Configure grub: `grub-mkconfig -o /boot/grub/grub.cfg`
 

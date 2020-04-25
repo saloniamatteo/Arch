@@ -308,9 +308,9 @@ I have provided examples for all of the DEs above.
 
 
 ## 21) [Install necessary drivers](https://wiki.archlinux.org/index.php/Xorg#Driver_installation)
-+ 21.1) AMD: `sudo pacman -S mesa xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`
-+ 21.2) Intel: `sudo pacman -S mesa xf86-video-intel vulkan-intel intel-ucode`
-+ 21.3) NVIDIA: `sudo pacman -S mesa nvidia xf86-video-nouveau nvidia-utils`
++ AMD: `sudo pacman -S mesa xf86-input-libinput xf86-video-ati xf86-video-amdgpu vulkan-radeon amd-ucode`
++ Intel: `sudo pacman -S mesa xf86-input-libinput xf86-video-intel vulkan-intel intel-ucode`
++ NVIDIA: `sudo pacman -S mesa xf86-input-libinput nvidia xf86-video-nouveau nvidia-utils`
 
 (NOTE: other video drivers can be found in the `xorg-drivers` group)
 
@@ -323,12 +323,52 @@ You might also want to install some codecs (audio, image & video):
 
 `sudo pacman -S flac faac wavpack libmad opus libvorbis openjpeg libwebp x265 libde265 x264 libmpeg2 libvpx`
 
+## 23) [Enable touchpad tap to click](https://wiki.archlinux.org/index.php/Libinput)
+Since we installed `xf86-input-libinput` in [Step 21](#21-install-necessary-drivers), we need to tweak the configuration.
+
++ 23.1) Copy the default configuration: `sudo cp /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d`
++ 23.2) Enable touchpad tap to click: `sudo vim /etc/X11/xorg.conf.d/40-libinput.conf`
+	- 23.2.1) Find `Identifier "libinput touchpad catchall"`
+	- 23.2.2) Under `Driver "libinput"` add this line: `Option "Tapping" "on"`
+	- 23.2.3) Save and quit
+	The touchpad config should look like this:
+	```
+	Section "InputClass"
+		Identifier "libinput touchpad catchall"
+		MatchIsTouchpad "on"
+		MatchDevicePath "/dev/input/event*"
+		Driver "libinput"
+		Option "Tapping" "on"
+	EndSection
+	```
+
+## 24) Pacman easter egg
++ 24.1) Modify `/etc/pacman.conf`: `sudo vim /etc/pacman.conf`
++ 24.2) Find the line that says `# Misc options`
++ 24.3) Remove the `#` before `Color`
++ 24.4) Below `#VerbosePkgLists` add this line: `ILoveCandy`
+
+Each time you will install a new package you will see a little pacman in the progress bar.
+The relevant `/etc/pacman.conf` should look like this:
+```
+# Misc options
+#UseSysLog
+Color
+#TotalDownload
+CheckSpace
+#VerbosePkgLists
+ILoveCandy
+```
+
 ***
 
 How to manage packages on Arch Linux:
 + To upgrade Arch Linux, run: `sudo pacman -Syu`
 + To install a package, run: `sudo pacman -S <package>`
-+ To remove a package, run: `sudo pacman R <package>`
++ To remove a package, run: `sudo pacman -Rns <package>`
++ To search a package in the official repositories, run: `pacman -Ss package-name`
++ To search a package you installed, run: `pacman -Qs package-name`
++ To clear the package cache, run: `sudo pacman -Sc`
 
 ***
 

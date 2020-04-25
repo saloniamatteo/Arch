@@ -95,6 +95,7 @@ wpa_supplicant -i wlan0 -c wpa.conf
 
 (Let's say you have a 500GB HDD and you want to create a SWAP partition of 4GB, you need to make an ext4 partition of 500-4 = 496GB, and a swap partition of 4GB, replacing "18G" with "496G" and "2G" with "4G".)
 
+NOTE: If you already have partitions (from Window$ or another Operating System), we need to delete them and convert the partition table to MBR. Run `gdisk /dev/sda`, then `r`, then `g`, then `w`. After this, using one of the tools below, delete the partition table, and create a new one.
 
 + USING `fdisk` (like the terminal prompt, not user friendly): 
 	- 2.1) `fdisk /dev/sda`

@@ -365,7 +365,7 @@ ILoveCandy
 On Ubuntu there's a package called `command-not-found`: its job is to tell the user the name of package to install in order to run a specific command. On Arch Linux, we can use `pkgfile`.
 
 + 25.1) Install pkgfile: `sudo pacman -S pkgfile`
-+ 25.2) Update the pkgfile database: `pkgfile -u`
++ 25.2) Update the pkgfile database (if necessary, run with `sudo`): `pkgfile -u`
 + 25.3) [Now append the line below to `.bashrc`](https://wiki.archlinux.org/index.php/Bash#Command_not_found): `vim ~/.bashrc`
 (Append the line below)
 

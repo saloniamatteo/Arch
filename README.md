@@ -366,10 +366,10 @@ On Ubuntu there's a package called `command-not-found`: its job is to tell the u
 
 + 25.1) Install pkgfile: `sudo pacman -S pkgfile`
 + 25.2) Update the pkgfile database: `pkgfile -u`
-+ 25.3) Now append the line below to `.bashrc`: `vim ~/.bashrc`
++ 25.3) [Now append the line below to `.bashrc`](https://wiki.archlinux.org/index.php/Bash#Command_not_found): `vim ~/.bashrc`
 (Append the line below)
 
-`https://wiki.archlinux.org/index.php/Bash#Command_not_found`
+`source /usr/share/doc/pkgfile/command-not-found.bash`
 
 + 25.4) Save and quit. Done!
 

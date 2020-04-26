@@ -373,6 +373,16 @@ On Ubuntu there's a package called `command-not-found`: its job is to tell the u
 
 + 25.4) Save and quit. Done!
 
+## 26) [Automatically enter a directory](https://wiki.archlinux.org/index.php/Bash#Auto_%22cd%22_when_entering_just_a_path)
+If you enter only the name of a directory (for example, `/etc`), cd into it.
+
++ 26.1) Append the line below to `.bashrc`: `vim ~/.bashrc`
+(Append the line below)
+
+`shopt -s autocd`
+
++ 26.2) Save and quit. Done!
+
 ***
 
 How to manage packages on Arch Linux:

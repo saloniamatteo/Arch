@@ -202,8 +202,8 @@ Update /etc/pacman.d/mirrorlist:
 + 15.3) Configure grub: `grub-mkconfig -o /boot/grub/grub.cfg`
 
 ## 16) Install the network tools
-+ 16.1) `pacman -S dhcpcd net-tools netctl`
-+ 16.2) After the above is done, enable `dhcpcd`: `systemctl enable dhcpcd`
++ 16.1) `pacman -S dhcpcd net-tools netctl dialog wpa_supplicant networkmanager`
++ 16.2) After the above is done, enable `dhcpcd`: `systemctl enable {dhcpcd,NetworkManager}`
 
 ## 17) [Reboot](https://wiki.archlinux.org/index.php/Installation_Guide#Reboot)
 + 17.1) Exit out of chroot: `exit`

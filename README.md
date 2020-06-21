@@ -1,3 +1,4 @@
+# WORK IN PROGRESS: TOTAL REWRITE
 ## How to install Arch Linux
 (These instructions were written by me, following the Arch Wiki, to install Arch in a VM &/or real machine)
 

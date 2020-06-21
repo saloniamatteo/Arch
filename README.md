@@ -150,7 +150,7 @@ If you want to use other filesystems instead of Ext4, please see https://wiki.ar
 
 + Update `/etc/pacman.d/mirrorlist`:
 	- 5.1) `vim /etc/pacman.d/mirrorlist`
-	- 5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose.
+	- 5.2) Select a server closest to you, for example Italy, and delete all of the lines, keeping only the server you chose. Alternatively, use the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/)
 	- 5.3) Save and quit
 
 ## 6) [Install essential packages](https://wiki.archlinux.org/index.php/Installation_Guide#Install_essential_packages)
@@ -332,7 +332,7 @@ Since we installed `xf86-input-libinput` in [section 20](#20-install-necessary-d
 	EndSection
 	```
 
-## 23) Pacman easter egg
+## 23) [Pacman easter egg](https://eeggs.com/items/59538.html)
 + 23.1) Modify `/etc/pacman.conf`: `sudo vim /etc/pacman.conf`
 + 23.2) Find the line that says `# Misc options`
 + 23.3) Remove the `#` before `Color`

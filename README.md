@@ -1,4 +1,6 @@
 ## How to install Arch Linux
+![banner](https://raw.githubusercontent.com/GoDzM4TT3O/Arch/master/banner.png)
+
 These instructions were written by [me](https://github.com/GoDzM4TT3O), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine. These instructions include both the installation process and the post-install process, as well as some [additions](#additions)
 
 NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an editor of your choice, like `emacs`. Keep this in mind!

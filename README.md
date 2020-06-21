@@ -90,13 +90,11 @@ NOTE: If you already have partitions (from Window$ or another Operating System),
 
 First of all, remove all pre-existing file systems from SATA HDD/SSD: `wipefs -a /dev/sda` (If you use an NVMe drive, it is going to be called something like `/dev/nvme0n1`, check available disks with `fdisk -l`)
 
-Let's start partitioning the disk: run `cfdisk /dev/sda`.
-
 NOTE: Say you have a 250GB HDD and 4GB RAM. If you are going to be using your system graphically, it is recommended the swap space needs to be 2\*RAM (in this case 2\*4GB is 8GB SWAP), otherwise, if you're going to be using it console-only, then a swap partition the same size as the RAM (1\*RAM, 1\*4GB is 4GB SWAP) is fine. That said, we are going to be using our system graphically, so the swap will be 8GB.
 
 If you want to use other filesystems instead of Ext4, please see https://wiki.archlinux.org/index.php/File_systems#Types_of_file_systems
 
-+ **MBR**: Select `dos`. Now we need to create two partitions: the first partition will be the biggest partition, used for storage, the second partition will be the smallest partition, used for the swap.
++ **MBR**: Run `fdisk /dev/sda`, then type `o`, then `w`. Run `cfdisk /dev/sda`, then select `dos`. Now we need to create two partitions: the first partition will be the biggest partition, used for storage, the second partition will be the smallest partition, used for the swap.
 	- First partition (Ext4): DISK SPACE - SWAP = 250GB - 8GB = 242GB
 	- Second partition (SWAP): SWAP = 8GB.
 
@@ -108,7 +106,7 @@ If you want to use other filesystems instead of Ext4, please see https://wiki.ar
 	- Go to `Type`, Select `Linux swap / Solaris`.
 	- Press `Write`, then `y` to save changes to disk.
 	
-+ **GPT**: Select `gpt`. Now we need to create three partitions: the first partition will be the smallest partition, used for EFI, the second partition will be the biggest partition, used for storage, the third partition will be used for the swap.
++ **GPT**:  Run `fdisk /dev/sda`, then type `g`, then `w`. Run `cfdisk /dev/sda`, then select `gpt`. Now we need to create three partitions: the first partition will be the smallest partition, used for EFI, the second partition will be the biggest partition, used for storage, the third partition will be used for the swap.
 	- First partition (EFI System partition): EFI = 512M
 	- Second partition (Ext4): DISK SPACE - SWAP - EFI = 250G - 8G - 512M = 242G - 512M = 242 - 0.5G = 241.5G = 241G (remove any decimal places by rounding down)
 	- Third partition (SWAP): SWAP = 8G

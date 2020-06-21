@@ -165,22 +165,25 @@ NOTE: Say you have a 250GB HDD and 4GB RAM. If you are going to be using your sy
 + 8.2) Install vim to modify files: `pacman -S vim`
 
 ## 9) [Localization](https://wiki.archlinux.org/index.php/Installation_Guide#Localization)
-(I will be using the Italian time; to select other timezones, press [TAB] after /zoneinfo/)
+
+I will be using the Italian time; to see available timezones, run `ls /usr/share/zoneinfo` and select accordingly.
 
 + 9.1) Timezone: `ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime`
 + 9.2) Sync the clock: `hwclock --systohc`
 
 + 9.3) Set the language(s):
-	- 9.3.1) `vim /etc/locale.gen`
+	- 9.3.1) Edit `/etc/locale.gen`: `vim /etc/locale.gen`
 	- 9.3.2) Uncomment `en_US.UTF-8 UTF-8`, then save and quit
-	- 9.3.3) `vim /etc/locale.conf`
+	- 9.3.3) Edit `/etc/locale.conf`: `vim /etc/locale.conf`
 	- 9.3.4) Add `LANG=en_US.UTF-8`, then save and quit
 	- 9.3.5) Generate the locale: `locale-gen`
 + 9.4) Set the keyboard layout:
-	- 9.4.1) `vim /etc/vconsole.conf`
-	- 9.4.2) Add "KEYMAP=it", then save and quit
-(Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`)
-(I chose `it` because it's the Italian keyboard layout I chose at the beginning; as I said it's unnecessary if you have a keyboard with an american keyboard layout)
+	- 9.4.1) Edit `/etc/vconsole.conf`: `vim /etc/vconsole.conf`
+	- 9.4.2) Write `KEYMAP=YOUR-KEYMAP`:
+	
+Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`. I chose `it` because I use a keyboard with an Italian keyboard layout, meaning I wrote `KEYMAP=it`. See more here: https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5
+
+After you're done, save and quit.
 
 ## 10) [Network Configuration: hostname](https://wiki.archlinux.org/index.php/Installation_Guide#Network_configuration)
 + 10.1) Modify `/etc/hostname`: `vim /etc/hostname`
@@ -206,13 +209,13 @@ Where `<your hostname>` is the hostname you chose in `/etc/hostname`.
 ## 12) [Set the root password](https://wiki.archlinux.org/index.php/Installation_Guide#Root_password)
 + 12.1) `passwd`
 
-## 13) Add a new user:
+## 13) [Add a new user](https://wiki.archlinux.org/index.php/Users_and_groups#Example_adding_a_user):
 
 For example I chose `matteo` so I will replace `<user>` with `matteo`.
 
 + 13.1) `useradd -m <user>`
 + 13.2) Add a password to the user: `passwd <user>`
-+ 13.3) Add the user to necessary groups: `usermod -aG wheel,audio,video,optical,storage <user>`
++ 13.3) [Add the user to necessary groups](https://wiki.archlinux.org/index.php/Users_and_groups#Group_list): `usermod -aG wheel,audio,video,optical,storage <user>`
 + 13.4) Check user is part of the groups we added above: `groups <user>`
 + 13.5) Add user to sudoers: `visudo`
 	- 13.6) Search `# %wheel ALL=(ALL) ALL`, remove the `#` at the beginning

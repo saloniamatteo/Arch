@@ -39,7 +39,7 @@ I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php
 + Click "Ok"
 + Start the VM
 
-NOTE: this will use `MBR`, meaning you'll use BIOS, not UEFI! If you want to use UEFI, follow these instructions: https://www.virtualbox.org/manual/ch03.html#efi
+NOTE: this will use `MBR`, meaning you'll use BIOS, not UEFI! If you want to use UEFI, follow these instructions: [https://www.virtualbox.org/manual/ch03.html#efi](https://www.virtualbox.org/manual/ch03.html#efi)
 
 ### If you use a real machine
 + Get a hold of a DVD/USB with at least 1GB of storage
@@ -94,7 +94,7 @@ First of all, remove all pre-existing file systems from SATA HDD/SSD: `wipefs -a
 
 NOTE: Say you have a 250GB HDD and 4GB RAM. If you are going to be using your system graphically, it is recommended the swap space needs to be 2\*RAM (in this case 2\*4GB is 8GB SWAP), otherwise, if you're going to be using it console-only, then a swap partition the same size as the RAM (1\*RAM, 1\*4GB is 4GB SWAP) is fine. That said, we are going to be using our system graphically, so the swap will be 8GB.
 
-If you want to use other filesystems instead of Ext4, please see https://wiki.archlinux.org/index.php/File_systems#Types_of_file_systems
+If you want to use other filesystems instead of Ext4, please see [https://wiki.archlinux.org/index.php/File_systems#Types_of_file_systems](https://wiki.archlinux.org/index.php/File_systems#Types_of_file_systems)
 
 + **MBR**: Run `fdisk /dev/sda`, then type `o`, then `w`. Run `cfdisk /dev/sda`, then select `dos`. Now we need to create two partitions: the first partition will be the biggest partition, used for storage, the second partition will be the smallest partition, used for the swap.
 	- First partition (Ext4): DISK SPACE - SWAP = 250GB - 8GB = 242GB
@@ -183,7 +183,7 @@ I will be using the Italian time; to see available timezones, run `ls /usr/share
 	- 9.4.1) Edit `/etc/vconsole.conf`: `vim /etc/vconsole.conf`
 	- 9.4.2) Write `KEYMAP=YOUR-KEYMAP`:
 	
-Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`. I chose `it` because I use a keyboard with an Italian keyboard layout, meaning I wrote `KEYMAP=it`. See more here: https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5
+Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`. I chose `it` because I use a keyboard with an Italian keyboard layout, meaning I wrote `KEYMAP=it`. See more here: [https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)
 
 After you're done, save and quit.
 
@@ -235,9 +235,9 @@ For example I chose `matteo` so I will replace `<user>` with `matteo`.
 		- Configure GRUB: `grub-mkconfig -o /boot/grub/grub.cfg`
 	+ **rEFInd**: `pacman -S refind efibootmgr os-prober freetype2 dosfstools`
 		- Install rEFInd to disk: `refind-install`
-		- NOTE: I also recommend using a custom theme; I use this one: https://github.com/munlik/refind-theme-regular
+		- NOTE: I also recommend using a custom theme; I use this one: [https://github.com/munlik/refind-theme-regular](https://github.com/munlik/refind-theme-regular)
 
-For other bootloaders, see https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader
+For other bootloaders, see [https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader](https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader)
 
 ## 15) Install the network tools
 
@@ -383,7 +383,7 @@ How to manage packages on Arch Linux:
 + To search a package you installed, run: `pacman -Qs package-name`
 + To clear the package cache, run: `sudo pacman -Sc`
 
-For other commands, see https://wiki.archlinux.org/index.php/Pacman/Rosetta
+For other commands, see [https://wiki.archlinux.org/index.php/Pacman/Rosetta](https://wiki.archlinux.org/index.php/Pacman/Rosetta)
 
 ***
 

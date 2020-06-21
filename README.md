@@ -48,9 +48,7 @@ NOTE: this will use `MBR`, meaning you'll use BIOS, not UEFI! If you want to use
 
 ***
 
-## After starting the VM/Computer:
-
-+ Choose "Arch Linux", then hit [ENTER]
+After starting the VM/Computer, choose "Arch Linux", then hit [ENTER]
 
 ## [Set the keyboard layout](https://wiki.archlinux.org/index.php/Installation_Guide#Set_the_keyboard_layout)
 

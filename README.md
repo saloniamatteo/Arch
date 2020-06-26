@@ -10,8 +10,8 @@ I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php
 If you want to see the RAW Markdown instructions (this file) in a terminal, run `curl -L https://git.io/Archlinux`.
 
 Alternatively, you can also format the file so that it won't have a lot of the Markdown specific syntax:
-+ If you want to save them into a file called "Archlinux": `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //' > Archlinux`
-+ If you want to display them onto the screen without saving: `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //' | less`
++ If you want to save them into a file called "Archlinux": `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv*/# IPv/;s/Misc/# Misc/' > Archlinux`
++ If you want to display them onto the screen without saving: `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv/# IPv/;s/Misc/# Misc/' | less`
     - You can replace `less` with `more`.
 
 ### If you use a VM:

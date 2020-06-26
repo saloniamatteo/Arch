@@ -7,7 +7,12 @@ NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an edit
 
 I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php/Installation_Guide). If you haven't already, download [the Arch ISO](https://www.archlinux.org/download).
 
-If you want to see the RAW Markdown instructions (this file) in a terminal, run `curl https://0x0.st/XX0Z`.
+If you want to see the RAW Markdown instructions (this file) in a terminal, run `curl -L https://git.io/Archlinux`.
+
+Alternatively, you can also format the file so that it won't have a lot of the Markdown specific syntax:
++ If you want to save them into a file called "Archlinux": `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //' > Archlinux`
++ If you want to display them onto the screen without saving: `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //' | less`
+    - You can replace `less` with `more`.
 
 ### If you use a VM:
 + Open [VirtualBox](https://www.virtualbox.org/wiki/Downloads)

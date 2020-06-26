@@ -1,7 +1,1 @@
 theme: jekyll-theme-cayman
-plugins:
-  - jekyll-redirect-from
-title: test
-redirect_from:
-    - /test
-redirect_to: https://test.com

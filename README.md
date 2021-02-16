@@ -1,7 +1,7 @@
 ## How to install Arch Linux
-![banner](https://raw.githubusercontent.com/GoDzM4TT3O/Arch/master/banner.png)
+![banner](https://raw.githubusercontent.com/saloniamatteo/Arch/master/banner.png)
 
-These instructions were written by [me](https://github.com/GoDzM4TT3O), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine. These instructions include both the installation process and the post-install process, as well as some [additions](#additions)
+These instructions were written by [me](https://github.com/saloniamatteo), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine. These instructions include both the installation process and the post-install process, as well as some [additions](#additions)
 
 NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an editor of your choice, like `emacs`. Keep this in mind!
 
@@ -272,7 +272,7 @@ If you don't want to use Arch graphically, go to section [number 20 (install nec
 
 ## 19) [Install a Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment#List_of_desktop_environments)
 
-NOTE: Instead of using a Desktop Environment, you can directly install a Window Manager. I use [i3](https://wiki.archlinux.org/index.php/i3). If you would like to use i3, follow this guide I wrote [here](https://godzm4tt3o.js.org/dotfiles/).
+NOTE: Instead of using a Desktop Environment, you can directly install a Window Manager. I use [i3](https://wiki.archlinux.org/index.php/i3). If you would like to use i3, follow this guide I wrote [here](https://saloniamatteo.top/dotfiles/).
 
 Please choose one of the following Desktop Environments:
 
@@ -396,4 +396,4 @@ For other commands, see [https://wiki.archlinux.org/index.php/Pacman/Rosetta](ht
 
 Now you installed Arch Linux, enjoy!
 
-You can improve these instructions by [creating a new pull request](https://github.com/GoDzM4TT3O/Arch/compare), or by creating [a new issue](https://github.com/GoDzM4TT3O/Arch/issues/new/choose).
+You can improve these instructions by [creating a new pull request](https://github.com/saloniamatteo/Arch/compare), or by creating [a new issue](https://github.com/saloniamatteo/Arch/issues/new/choose).

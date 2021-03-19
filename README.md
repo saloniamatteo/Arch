@@ -1,18 +1,71 @@
 ## How to install Arch Linux
 ![banner](https://raw.githubusercontent.com/saloniamatteo/Arch/master/banner.png)
 
-These instructions were written by [me](https://github.com/saloniamatteo), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine. These instructions include both the installation process and the post-install process, as well as some [additions](#additions)
+These instructions were written by [me](https://github.com/saloniamatteo), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine.
+These instructions include both the installation process and the post-install process, as well as some [additions](#additions)
 
-NOTE: if you don't like using `vim`, please replace `vim` with `nano` or an editor of your choice, like `emacs`. Keep this in mind!
+NOTE: the editor used in this guide is `vim`.
 
-I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php/Installation_Guide). If you haven't already, download [the Arch ISO](https://www.archlinux.org/download).
+I suggest also checking out [the arch wiki](https://wiki.archlinux.org/index.php/Installation_Guide).
+If you haven't already, download [the Arch ISO](https://www.archlinux.org/download).
 
 If you want to see the RAW Markdown instructions (this file) in a terminal, run `curl -L https://git.io/Archlinux`.
 
 Alternatively, you can also format the file so that it won't have a lot of the Markdown specific syntax:
-+ If you want to save them into a file called "Archlinux": `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv*/# IPv/;s/Misc/# Misc/' > Archlinux`
-+ If you want to display them onto the screen without saving: `curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv/# IPv/;s/Misc/# Misc/' | less`
-    - You can replace `less` with `more`.
++ If you want to save them into a file called "Archlinux":
+	`curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv*/# IPv/;s/Misc/# Misc/' > Archlinux`
++ If you want to display them onto the screen without saving:
+	`curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv/# IPv/;s/Misc/# Misc/' | less`
+	
+## Table of contents
++ Pre-installation
+	- [If you use a VM](#if-you-use-a-vm)
+	- [If you use a real machine](#if-you-use-a-real-machine)
+	- [Set the keyboard layout](#set-the-keyboard-layout)
+	- [Verify the boot mode](#verify-the-boot-mode)
+
++ Initial Configuration
+	- [1) Connect to the internet](#1-connect-to-the-internet)
+	- [2) Partition the disk](#2-partition-the-disk)
+	- [3) Create the file system](#3-create-the-file-system)
+	- [4) Mount the partitions](#4-mount-the-partitions)
+
++ Setting up the base system
+	- [5) Installation: modifying the mirror list](#5-installation-modifying-the-mirror-list)
+	- [6) Install essential packages](#6-install-essential-packages)
+	- [7) Configuring the system: Fstab](#7-configuring-the-system-fstab)
+	- [8) Configuring the system: Chroot](#8-configuring-the-system-chroot)
+
++ Modifying languages
+	- [9) Localization](#9-localization)
+
++ Network configuration
+	- [10) Network Configuration: hostname](#10-network-configuration-hostname)
+	- [11) Network Configuration: hosts](#11-network-configuration-hosts)
+
++ Setting-up users
+	- [12) Set the root password](#12-set-the-root-password)
+	- [13) Add a new user](#13-add-a-new-user)
+
++ Installing required tools
+	- [14) Install the bootloader](#14-install-the-bootloader)
+	- [15) Install the network tools](#15-install-the-network-tools)
+
++ Post-installation
+	- [16) Reboot](#16-reboot)
+	- [17) Post-installation](#17-post-installation)
+	- [18) Install X.Org](#18-install-xorg)
+	- [19) Install a Desktop Environment](#19-install-a-desktop-environment)
+	- [20) Install necessary drivers](#20-install-necessary-drivers)
+	- [21) Install audio sound system](#21-install-audio-sound-system)
+
++ [Additions](#additions)
+	- [22) Enable touchpad tap to click](#22-enable-touchpad-tap-to-click)
+	- [23) Pacman easter egg](#23-pacman-easter-egg)
+	- [24) Command-not-found](#24-command-not-found)
+	- [25) Automatically enter a directory](#25-automatically-enter-a-directory)
+
+See also [How to manage packages on Arch Linux](#how-to-manage-packages)
 
 ### If you use a VM:
 + Open [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -46,7 +99,8 @@ Alternatively, you can also format the file so that it won't have a lot of the M
 + Click "Ok"
 + Start the VM
 
-NOTE: this will use `MBR`, meaning you'll use BIOS, not UEFI! If you want to use UEFI, follow these instructions: [https://www.virtualbox.org/manual/ch03.html#efi](https://www.virtualbox.org/manual/ch03.html#efi)
+NOTE: this will use `MBR`, meaning you'll use BIOS, not UEFI!
+If you want to use UEFI, follow these instructions: [https://www.virtualbox.org/manual/ch03.html#efi](https://www.virtualbox.org/manual/ch03.html#efi)
 
 ### If you use a real machine
 + Get a hold of a DVD/USB with at least 1GB of storage
@@ -55,9 +109,22 @@ NOTE: this will use `MBR`, meaning you'll use BIOS, not UEFI! If you want to use
 + Put the DVD/USB in your machine
 + Open the BIOS/UEFI and [modify the boot order](https://www.pcsteps.com/1508-change-the-boot-order-usb-dvd-bios-uefi/), choosing the DVD/USB as the first boot device.
 
+If you already have a machine running Linux, you can use `dd` to flash the ISO to your usb/dvd.
+For example, if you usb drive is `/dev/sdc` (check with `lsblk`), run the following command:
+
+```bash
+dd if=archiso.iso of=/dev/sdc status=progress bs=512M
+```
+
+Likewise, if you DVD slot is `/dev/sd0`, run the following command:
+
+```bash
+dd if=archiso.iso of=/dev/sd0 status=progress bs=512M
+```
+
 ***
 
-After starting the VM/Computer, choose "Arch Linux", then hit [ENTER]
+After starting the VM/Computer, choose "Arch Linux" from the bootloader (GRUB), then hit [ENTER]
 
 ## [Set the keyboard layout](https://wiki.archlinux.org/index.php/Installation_Guide#Set_the_keyboard_layout)
 
@@ -69,11 +136,25 @@ Once you find your keyboard layout, run: `loadkeys <keyboard-layout>`: For examp
 
 Run this command: `ls /sys/firmware/efi/efivars`.
 
-If the command shows the directory without error, then the system is booted in UEFI mode. If the directory does not exist, the system may be booted in BIOS (or CSM) mode. If the system did not boot in the mode you desired, refer to your motherboard's manual. 
+If the command shows the directory without error, then the system is booted in UEFI mode. If the directory does not exist, the system may be booted in BIOS (or CSM) mode.
+
+If the system did not boot in the mode you desired, refer to your motherboard's manual, or check your BIOS/UEFI settings;
+look for an option under "Boot" called "Prefer boot mode", it should be set to UEFI.
 
 ## 1) [Connect to the internet](https://wiki.archlinux.org/index.php/Installation_Guide#Connect_to_the_internet)
-Note: if you want to use Wi-Fi, run `wifi-menu` to connect to a wireless network.
-If, for some reason, `wifi-menu` fails, run these two commands:
+Let's connect using `iwctl`:
+1. Run `iwctl`
+2. In the `iwctl` prompt, type `device list`
+3. Then, scan for available networks: `station [DEVICE] scan` (`[DEVICE]` is the Wi-Fi card, like `wlp3s0`)
+4. Get a list of the Wi-Fi networks: `station [DEVICE] get-networks`
+5. Connect to a network: `station [DEVICE] connect [SSID]` (`[SSID]` is the name of the Wi-Fi network)
+
+If a passphrase is required, you will be prompted to enter it.
+
+Alternatively, you can supply it as a command line argument:
+`iwctl --passphrase "[WIFI PASSWORD]" station [DEVICE] connect [SSID]`
+
+If, for some reason, `iwctl` fails, run these two commands:
 
 (If the wireless network interface isn't `wlan0`, use the one you have)
 
@@ -382,6 +463,7 @@ If you enter only the name of a directory (for example, `/etc`), cd into it.
 
 ***
 
+## How to manage packages
 How to manage packages on Arch Linux:
 + To upgrade Arch Linux, run: `sudo pacman -Syu`
 + To install a package, run: `sudo pacman -S <package>`
@@ -389,6 +471,9 @@ How to manage packages on Arch Linux:
 + To search a package in the official repositories, run: `pacman -Ss package-name`
 + To search a package you installed, run: `pacman -Qs package-name`
 + To clear the package cache, run: `sudo pacman -Sc`
++ To list installed packages that are not needed, run: `pacman -Qdt`
++ To list packages installed via the AUR/PKGBUILDS, run: `pacman -Qm`
++ To list packages installed via pacman repos, run: `pacman -Qn`
 
 For other commands, see [https://wiki.archlinux.org/index.php/Pacman/Rosetta](https://wiki.archlinux.org/index.php/Pacman/Rosetta)
 

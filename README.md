@@ -180,7 +180,15 @@ NOTE: If you already have partitions (from Window$ or another Operating System),
 
 First of all, remove all pre-existing file systems from SATA HDD/SSD: `wipefs -a /dev/sda` (If you use an NVMe drive, it is going to be called something like `/dev/nvme0n1`, check available disks with `fdisk -l`)
 
-NOTE: Say you have a 250GB HDD and 4GB RAM. If you are going to be using your system graphically, it is recommended the swap space needs to be 2\*RAM (in this case 2\*4GB is 8GB SWAP), otherwise, if you're going to be using it console-only, then a swap partition the same size as the RAM (1\*RAM, 1\*4GB is 4GB SWAP) is fine. That said, we are going to be using our system graphically, so the swap will be 8GB.
+#### Swap
+Say you have a 250GB HDD and 4GB RAM.
+If you are going to be using your system as a Desktop,
+not compiling anything huge (for example, Firefox),
+I recommended that you reserve at least 4GB for swap space.
+If you have a lot of RAM (say, 32GB), 4GB will do just fine.
+However, if you have ~8GB RAM and you look forward to compiling big stuff
+(even infrequently), I recommend having a swap partition of at least 2 + (2 * RAM).
+In this case, we'll set a swap partition size of 8GB.
 
 If you want to use other filesystems instead of Ext4, please see [https://wiki.archlinux.org/index.php/File_systems#Types_of_file_systems](https://wiki.archlinux.org/index.php/File_systems#Types_of_file_systems)
 
@@ -211,6 +219,23 @@ If you want to use other filesystems instead of Ext4, please see [https://wiki.a
 	- Partition size `8G`, Choose `primary`;
 	- Go to type, Select `Linux swap`;
 	- Press `Write`, then `y` to save changes to disk.
+
+Your partition table should look like this (sizes may vary):
+
+**MBR**:
+
+| Device    | Partition Type | Partition Size |
+|-----------|----------------|----------------|
+| /dev/sda1 | Ext4           | 242G           |
+| /dev/sda2 | Linux Swap     | 8G             |
+
+**GPT**:
+
+| Device    | Partition Type | Partition Size |
+|-----------|----------------|----------------|
+| /dev/sda1 | EFI System     | 512M           |
+| /dev/sda2 | Ext4           | 241G           |
+| /dev/sda3 | Linux Swap     | 8G             |
 	
 ## 3) [Create the file system](https://wiki.archlinux.org/index.php/Installation_Guide#Format_the_partitions)
 
@@ -233,6 +258,23 @@ If you want to use other filesystems instead of Ext4, please see [https://wiki.a
 	- Mount the EFI System partition: `mount /dev/sda1 /mnt/boot/efi`
 	- Mount the Ext4 partition: `mount /dev/sda2 /mnt`
 	- Mount the SWAP partition: `swapon /dev/sda3`
+
+The partitions should be mounted like this (check with `lsblk`):
+
+**MBR**:
+
+| Partition to mount | Mountpoint |
+|--------------------|------------|
+| /dev/sda1          | /mnt       |
+| /dev/sda2          | [SWAP]     |
+
+**GPT**:
+
+| Partition to mount | Mountpoint    |
+|--------------------|---------------|
+| /dev/sda1          | /mnt/boot/efi |
+| /dev/sda2          | /mnt          |
+| /dev/sda3          | [SWAP]        |
 
 ## 5) [Installation: modifying the mirror list](https://wiki.archlinux.org/index.php/Installation_Guide#Installation)
 

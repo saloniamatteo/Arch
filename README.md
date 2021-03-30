@@ -180,6 +180,8 @@ NOTE: If you already have partitions (from Window$ or another Operating System),
 
 First of all, remove all pre-existing file systems from SATA HDD/SSD: `wipefs -a /dev/sda` (If you use an NVMe drive, it is going to be called something like `/dev/nvme0n1`, check available disks with `fdisk -l`)
 
+To make sure your changes to the partitions are synced with the Kernel, run `partprobe`.
+
 #### Swap
 Say you have a 250GB HDD and 4GB RAM.
 If you are going to be using your system as a Desktop,

@@ -399,7 +399,7 @@ NOTE: Instead of using a Desktop Environment, you can directly install a Window 
 
 Please choose one of the following Desktop Environments:
 
-- [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gnome budgie-desktop`
+- [Budgie](https://wiki.archlinux.org/index.php/Budgie): `sudo pacman -S gdm budgie-desktop`
 - [Cinnamon (please read)](https://wiki.archlinux.org/index.php/Cinnamon#Installation): `sudo pacman -S cinnamon lightdm`
 - [Deepin (please read)](https://wiki.archlinux.org/index.php/Deepin#Installation): `sudo pacman -S deepin deepin-extra networkmanager lightdm`
 - [GNOME](https://wiki.archlinux.org/index.php/GNOME): `sudo pacman -S gnome gnome-extra networkmanager`

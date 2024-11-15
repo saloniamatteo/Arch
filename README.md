@@ -1,3 +1,6 @@
+## Donate
+Support this project: [salonia.it/donate](https://salonia.it/donate)
+
 ## How to install Arch Linux
 These instructions were written by [me](https://github.com/saloniamatteo), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine.
 These instructions include both the installation process and the post-install process, as well as some [additions](#additions)

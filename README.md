@@ -1,3 +1,5 @@
+# Arch Linux installation instructions
+
 ## How to install Arch Linux
 These instructions were written by [me](https://github.com/saloniamatteo), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine.
 These instructions include both the installation process and the post-install process, as well as some [additions](#additions)
@@ -14,7 +16,7 @@ Alternatively, you can also format the file so that it won't have a lot of the M
 	`curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv*/# IPv/;s/Misc/# Misc/' > Archlinux`
 + If you want to display them onto the screen without saving:
 	`curl -L https://git.io/Archlinux | sed 's/^#* //;/^!/d;s/^+ //;s/IPv/# IPv/;s/Misc/# Misc/' | less`
-	
+
 ## Table of contents
 + Pre-installation
 	- [If you use a VM](#if-you-use-a-vm)
@@ -74,12 +76,12 @@ See also [How to manage packages on Arch Linux](#how-to-manage-packages)
 	- Name: Arch (or whatever you want to put)
 	- RAM: At least 512 MB (though >1024MB is recommended if you want to use a DE like GNOME or KDE)
 	- Hard disk: Create a virtual hard disk now
-	
+
 + Click "Create"
 	- File Size: At least 5 GB (though >10GB is recommended)
 	- Hard disk file type: VDI
 	- Storage on physical HDD: Dynamically allocated
-	
+
 + Click "Create"
 + Select the new VM
 + Click "Settings"
@@ -88,12 +90,12 @@ See also [How to manage packages on Arch Linux](#how-to-manage-packages)
 	- Click on the CD/DVD icon
 	- On the right, select the location of the Arch iso
 	- Select "Live CD/DVD"
-	
+
 + Go into the "Network " tab
 	- Click on "NAT"
 	- Select "Bridged adapter"
 	- Choose the network interface you want to use for the Virtual Machine (for example wlp4s0 and enp3s0 are two network interfaces)
-	
+
 + Click "Ok"
 + Start the VM
 
@@ -203,7 +205,7 @@ If you want to use other filesystems instead of Ext4, please see [https://wiki.a
 	- Partition size `8G`, Choose `primary`;
 	- Go to `Type`, Select `Linux swap / Solaris`.
 	- Press `Write`, then `y` to save changes to disk.
-	
+
 + **GPT**:  Run `fdisk /dev/sda`, then type `g`, then `w`. Run `cfdisk /dev/sda`, then select `gpt`. Now we need to create three partitions: the first partition will be the smallest partition, used for EFI, the second partition will be the biggest partition, used for storage, the third partition will be used for the swap.
 	- First partition (EFI System partition): EFI = 512M
 	- Second partition (Ext4): DISK SPACE - SWAP - EFI = 250G - 8G - 512M = 242G - 512M = 242 - 0.5G = 241.5G = 241G (remove any decimal places by rounding down)
@@ -236,13 +238,13 @@ Your partition table should look like this (sizes may vary):
 | /dev/sda1 | EFI System     | 512M           |
 | /dev/sda2 | Ext4           | 241G           |
 | /dev/sda3 | Linux Swap     | 8G             |
-	
+
 ## 3) [Create the file system](https://wiki.archlinux.org/index.php/Installation_Guide#Format_the_partitions)
 
 + **MBR**:
 	- Ext4: `mkfs.ext4 /dev/sda1`
 	- SWAP: `mkswap /dev/sda2`
-	
+
 + **GPT**:
 	- EFI: `mkfs.fat -F32 /dev/sda1`
 	- Ext4: `mkfs.ext4 /dev/sda2`
@@ -253,7 +255,7 @@ Your partition table should look like this (sizes may vary):
 + **MBR**:
 	- Mount the Ext4 partition: `mount /dev/sda1 /mnt`
 	- Mount the SWAP partition: `swapon /dev/sda2`
-	
+
 + **GPT**:
 	- Mount the EFI System partition: `mount /dev/sda1 /mnt/boot/efi`
 	- Mount the Ext4 partition: `mount /dev/sda2 /mnt`
@@ -312,7 +314,7 @@ I will be using the Italian time; to see available timezones, run `ls /usr/share
 + 9.4) Set the keyboard layout:
 	- 9.4.1) Edit `/etc/vconsole.conf`: `vim /etc/vconsole.conf`
 	- 9.4.2) Write `KEYMAP=YOUR-KEYMAP`:
-	
+
 Here after `KEYMAP` you need to type your keyboard's layout, you chose this before when you ran `loadkeys <code>`. I chose `it` because I use a keyboard with an Italian keyboard layout, meaning I wrote `KEYMAP=it`. See more here: [https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)
 
 After you're done, save and quit.
@@ -358,7 +360,7 @@ For example I chose `matteo` so I will replace `<user>` with `matteo`.
 	+ **GRUB**: `pacman -S grub os-prober freetype2 dosfstools`
 		- Install GRUB to disk: `grub-install /dev/sda`
 		- Configure GRUB: `grub-mkconfig -o /boot/grub/grub.cfg`
-		
+
 + **GPT**:
 	+ **GRUB**: `pacman -S grub efibootmgr os-prober freetype2 dosfstools`
 		- Install GRUB to disk: `grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB`

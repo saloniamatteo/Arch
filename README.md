@@ -1,4 +1,8 @@
-# Arch Linux installation instructions
+---
+title: "Arch Linux installation instructions"
+author:
+- Matteo Salonia
+---
 
 ## How to install Arch Linux
 These instructions were written by [me](https://github.com/saloniamatteo), following the [Arch Wiki](https://wiki.archlinux.org), to install Arch in a VM &/or real machine.
